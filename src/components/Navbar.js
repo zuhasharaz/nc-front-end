@@ -6,7 +6,7 @@ const Navbar = ({ topics }) => (
     <ul>
       {topics.map(topic => (
         <li key={topic.slug}>
-          <NavLink to={topic.slug}>{topic.name}</NavLink>
+          <NavLink to={`/topics/${topic.slug}`}>{topic.name}</NavLink>
         </li>
       ))}
     </ul>
