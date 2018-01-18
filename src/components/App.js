@@ -5,24 +5,27 @@ import Navbar from "./Navbar";
 import HomePage from "./HomePage";
 import TopicPage from "./TopicPage";
 
-const { REACT_APP_API_URL: API_URL } = process.env;
+import { fetchTopics } from "../api";
 
 class App extends Component {
   state = {
     loading: true,
-    topics: []
-  };
-  fetchTopics = () => {
-    return fetch(`${API_URL}/topics`).then(res => res.json());
+    topics: [],
+    error: null
   };
   componentDidMount() {
-    this.fetchTopics().then(body => {
-      this.setState({ topics: body.topics, loading: false });
-    });
+    fetchTopics()
+      .then(body => {
+        this.setState({ topics: body.topics, loading: false });
+      })
+      .catch(error => {
+        this.setState({ error, loading: false });
+      });
   }
   render() {
-    const { loading, topics } = this.state;
+    const { loading, topics, error } = this.state;
     if (loading) return "🤔🤔🤔";
+    if (!loading && error) return error;
     return (
       <BrowserRouter>
         <div>
