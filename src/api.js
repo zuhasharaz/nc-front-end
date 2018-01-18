@@ -11,3 +11,9 @@ export const fetchArticles = topic => {
 
   return fetch(url).then(res => res.json());
 };
+
+export const voteArticle = (articleId, vote) => {
+  return fetch(`${API_URL}/articles/${articleId}?vote=${vote}`, {
+    method: 'PUT'
+  }).then(res => res.json());
+}
