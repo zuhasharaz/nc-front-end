@@ -22,9 +22,10 @@ class Topic extends Component {
 
   fetchArticles = async () => {
     let articles;
+    console.log(this.props.match)
     let topic = this.props.match.params.topic_slug;
     articles = await api.getArticlesByTopic(topic);
-
+    console.log(articles)
     this.setState({ articles })
   };
 

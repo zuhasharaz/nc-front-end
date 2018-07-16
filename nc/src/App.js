@@ -9,9 +9,10 @@ import Topics from "./components/Topics";
 import Article from "./components/Article";
 import Comments from "./components/Comments";
 import Articles from "./components/Articles";
-
+import NotFound from "./components/NotFound"
 import Topic from "./components/Topic";
-import Home from "./components/Home";
+import Home from "./components/Home"
+
 class App extends Component {
   state = {
     loggedInUser: "5b32518de8e81b0e677d5f8f"
@@ -22,7 +23,7 @@ class App extends Component {
         <Navigation />
 
         {/* <Comments /> */}
-        <Route path="/" render={props => <Topic {...props} />} />
+       <Topic/>
 
         <Switch>
           <Route
@@ -68,11 +69,12 @@ class App extends Component {
           />
 
           <Route
-            path="/"
+            exact path="/"
             render={props => (
               <Articles {...props} user={this.state.loggedInUser} />
             )}
           />
+          <Route path="/404" component={NotFound} />
         </Switch>
       </div>
     );

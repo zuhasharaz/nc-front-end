@@ -26,6 +26,7 @@ export const getTopics = () => {
 };
 
 export const getArticlesByTopic = topic => {
+  console.log(topic)
   return axios.get(`${url}/topics/${topic}/articles`).then(res => {
     return res.data.articles;
   });

@@ -13,6 +13,7 @@ class Comments extends Component {
   componentDidMount = async () => {
     let id = this.props.match.params.articleId;
     this.getCommentById(id)
+  
   };
 
   componentDidUpdate = async prevProps => {
@@ -109,7 +110,6 @@ class Comments extends Component {
         })
       })
   }
-
 }
 
 export default Comments;

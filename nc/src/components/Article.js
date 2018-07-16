@@ -6,7 +6,7 @@ import { Card, Col, CardTitle, Button } from "react-materialize";
 class Article extends React.Component {
   state = {
     article: {},
-    invalidArticle: false
+   articleError: false
   };
 
   componentDidMount() {
@@ -30,8 +30,8 @@ class Article extends React.Component {
   };
 
   render() {
+    if (this.state.articleError) return <Redirect to ="/404" />
     return (
-      !this.state.articleError ?
     <div>
         
         <Card>
@@ -50,12 +50,10 @@ class Article extends React.Component {
           <Button onClick={() => this.voteArticleClick("down")}>👎🏽</Button>
           <h1> {this.state.article.belongs_to} </h1>
         </Card>
-        </div>  : <Redirect to="/404"></Redirect>
+        </div>  
     )
-
-
   }
-  
+
   voteArticleClick = (vote) => {
     api.articleVote(this.state.article._id, vote)
       .then(({ votes }) => {
