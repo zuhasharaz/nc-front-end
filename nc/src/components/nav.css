@@ -1,0 +1,34 @@
+.buttonnav {
+  height: 40px;
+}
+.users {
+  font-size: 40px;
+  margin-left: 1px;
+}
+
+.pics {
+  text-align: center;
+  width: 600px;
+  margin-left: 400px;
+}
+
+.articletitle {
+  font-size: 20px;
+  color: black;
+}
+
+.topics {
+  font-size: 25px;
+}
+
+.title {
+  font-size: 35px;
+}
+
+.hero-body {
+  height: 190px;
+}
+
+.share{
+  font-size: 30px
+}
