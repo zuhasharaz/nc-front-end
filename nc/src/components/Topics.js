@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { Card, Col, CardTitle } from "react-materialize";
 class Topic extends Component {
   state = {
-    articles: []
+    articles: [],
+    topicError: false
   };
 
   componentDidMount = async () => {
@@ -24,7 +25,7 @@ class Topic extends Component {
     let topic = this.props.match.params.topic_slug;
     articles = await api.getArticlesByTopic(topic);
 
-    this.setState({ articles });
+    this.setState({ articles })
   };
 
   render() {
