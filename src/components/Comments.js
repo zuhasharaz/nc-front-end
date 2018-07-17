@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import { Card, Col, CardTitle } from "react-materialize";
+import moment from "moment";
 import { Link } from "react-router-dom";
 import { Button, Row, Input } from "reactstrap";
 import AddComment from "./AddComment";
@@ -52,8 +53,8 @@ class Comments extends Component {
               <p> Votes : {comment.votes}✅ </p>
               <Button onClick={() => this.voteCommentClick(comment._id, 'up')}>👍🏽</Button>
               <Button onClick={() => this.voteCommentClick(comment._id, 'down')}>👎🏽</Button>
-
             </Card>
+            {/* {moment(comment.timestamp).fromNow()} */}
           </div>;
         })}
         <AddComment
