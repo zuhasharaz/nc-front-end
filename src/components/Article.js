@@ -1,12 +1,13 @@
 import React from "react";
 import * as api from "../api";
-
+import "./Articles.css";
 import { Link, Redirect } from "react-router-dom"
 import { Card, Col, CardTitle, Button } from "react-materialize";
 class Article extends React.Component {
   state = {
     article: {},
-   articleError: false
+   articleError: false,
+  
   };
 
   componentDidMount() {
@@ -30,10 +31,10 @@ class Article extends React.Component {
   };
 
   render() {
+    const {article, comments} = this.state
     if (this.state.articleError) return <Redirect to ="/404" />
     return (
     <div>
-        
         <Card>
           <div class="w3-container w3-center w3-animate-top">
             <h1 className="title">
@@ -49,6 +50,9 @@ class Article extends React.Component {
           <Button onClick={() => this.voteArticleClick("up")}>👍🏽</Button>
           <Button onClick={() => this.voteArticleClick("down")}>👎🏽</Button>
           <h1> {this.state.article.belongs_to} </h1>
+          <Link to={`/articles/${article._id}/comments`}>
+            <Button className= "viewcomment">  View All Comments </Button>
+          </Link>
         </Card>
         </div>  
     )

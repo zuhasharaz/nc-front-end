@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./nav.css";
 import * as api from "../api";
 import { Link } from "react-router-dom";
 import { Card, Col, CardTitle } from "react-materialize";
@@ -37,7 +38,7 @@ class Topic extends Component {
         {articles.map(article => {
           const { _id, comments } = article;
           return (
-            <div>
+            <div className = "topicinfo">
               <Card>
                 <Link to={`/articles/${article._id}`} key={article._id}>
                   <p> Topic : {article.belongs_to} </p>

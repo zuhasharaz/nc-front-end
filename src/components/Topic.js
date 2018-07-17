@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "bulma/css/bulma.css";
-import "./nav.css";
+
 const Topic = () => {
   return (
     <div class="topics">

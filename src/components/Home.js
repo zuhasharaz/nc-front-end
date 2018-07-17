@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import { Link } from "react-router-dom";
-import "./nav.css";
+import "./home.css";
 import { Card, Col, CardTitle } from "react-materialize";
 class Home extends React.Component {
   state = {
