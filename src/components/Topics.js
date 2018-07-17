@@ -37,12 +37,11 @@ class Topic extends Component {
       <div>
         {articles.map(article => {
           const { _id, comments } = article;
-          return (
-            <div className = "topicinfo">
+          return <div className="topicinfo">
               <Card>
                 <Link to={`/articles/${article._id}`} key={article._id}>
-                  <p> Topic : {article.belongs_to} </p>
                   <p>{article.title}</p>
+                  <p> Topic:👉🏽{article.belongs_to}👈🏽 </p>
                   <Link to={`/articles/${article._id}/comments`}>
                     <button className="btn btn-info">
                       Comments : {comments}
@@ -50,8 +49,7 @@ class Topic extends Component {
                   </Link>
                 </Link>
               </Card>
-            </div>
-          );
+            </div>;
         })}
       </div>
     );

@@ -7,28 +7,30 @@ import "bulma/css/bulma.css";
 import "./nav.css";
 
 const Navigation = () => {
-  return (
-    <section className="hero is-dark is-bold">
+  return <section className="hero is-dark is-bold">
       <div className="hero-body">
         <div className="container">
-          <h1 className="title">Welcome to NC News</h1>
+        <h1 className="welcome">🗞Welcome to NC News 🗞</h1>
           <div className="buttonnav">
             <NavLink to="/topics">
-              {" "}
-              <Button color="info">Home</Button>{" "}
+            {" "}  
+            {" "}
+            <Button color="info">Home🏠</Button>{" "}
             </NavLink>
             <NavLink to="/">
-              <Button color="danger">All Articles</Button>
+            {" "}
+            {" "}
+            <Button color="danger">All Articles📝</Button>
             </NavLink>
-
             <NavLink to="/users">
-              <Button colour="info"> Users </Button>
+            {" "}
+            {" "}
+            <Button colour="info"> Users👥 </Button>
             </NavLink>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 
 export default Navigation;

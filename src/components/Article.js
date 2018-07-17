@@ -31,31 +31,32 @@ class Article extends React.Component {
   };
 
   render() {
-    const {article, comments} = this.state
+    const {article} = this.state
     if (this.state.articleError) return <Redirect to ="/404" />
-    return (
-    <div>
+    return <div>
         <Card>
           <div class="w3-container w3-center w3-animate-top">
-            <h1 className="title">
+            <h1 className="reading">
               You are reading
               <br />
-              {this.state.article.title}
+            🔎 {this.state.article.title} 🔍
             </h1>
-            <br />
           </div>
-          <h1> Created by: {this.state.article.created_by}</h1>
-          <h1> {this.state.article.body} </h1>
+          <br/>
+          <h1 className = "articlebody"> {this.state.article.body} </h1>
+          <br />
           <h1> Votes {this.state.article.votes} </h1>
           <Button onClick={() => this.voteArticleClick("up")}>👍🏽</Button>
           <Button onClick={() => this.voteArticleClick("down")}>👎🏽</Button>
           <h1> {this.state.article.belongs_to} </h1>
           <Link to={`/articles/${article._id}/comments`}>
-            <Button className= "viewcomment">  View All Comments </Button>
+            <Button className="viewcomment"> 💬View All Comments💬</Button>
           </Link>
+          <br />
+          <br />
+          <h1> Created by: {this.state.article.created_by} 👤</h1>
         </Card>
-        </div>  
-    )
+      </div>;
   }
 
   voteArticleClick = (vote) => {

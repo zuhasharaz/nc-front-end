@@ -8,27 +8,15 @@ class AddComment extends React.Component {
     // created_by: "5b32518de8e81b0e677d5f8f"
   };
   render() {
-    return (
-      <div>
+    return <div>
         <h1 class="share"> Share your thoughts </h1>
         <div>
-          <input
-            type="text"
-            placeholder="Write your comment..."
-            onChange={this.handleChange}
-            value={this.state.newComment}
-          />
+          <input type="text" placeholder="Write your comment..." onChange={this.handleChange} value={this.state.newComment} />
         </div>
-        <Button
-          onClick={() =>
-            this.props.addComment(this.props.articleId, this.state.newComment)
-          }
-          waves="light"
-        >
-          Add Comment
+        <Button onClick={() => this.props.addComment(this.props.articleId, this.state.newComment)} waves="light">
+          Add Comment💭
         </Button>
-      </div>
-    );
+      </div>;
   }
 
   handleChange = event => {

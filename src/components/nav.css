@@ -1,5 +1,6 @@
 .buttonnav {
   height: 40px;
+  
 }
 
 .topics {
@@ -15,5 +16,10 @@
 }
 
 .topicinfo{
-  font-size: 20px
+  font-size: 25px
 }
+
+.welcome{
+  font-size: 60px
+}
+
