@@ -17,7 +17,7 @@ const Navigation = () => {
               {" "}
               <Button color="info">Home</Button>{" "}
             </NavLink>
-            <NavLink to="/articles">
+            <NavLink to="/">
               <Button color="danger">All Articles</Button>
             </NavLink>
 

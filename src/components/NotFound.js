@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Card, Col, CardTitle, Button } from "react-materialize";
 
 class NotFound extends Component {
   componentDidMount() {
@@ -9,10 +10,12 @@ class NotFound extends Component {
   }
   render() {
     return (
-      <div>
+      <Card>
+      
         <h1>Page Not Found</h1>
         <p>Sorry nothing here!</p>
-     </div>
+        <h1> Taking you back to home page!! </h1>
+     </Card>
     )
   }
 }
